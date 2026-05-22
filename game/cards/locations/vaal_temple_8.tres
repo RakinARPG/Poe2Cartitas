@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://ceov8bxmc1540"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_b0fdb"]
+
+[resource]
+script = ExtResource("1_b0fdb")
+location_name = "Vaal Temple"
+effect_type = 4
+params = {
+"ongoing_bonus": 1
+}

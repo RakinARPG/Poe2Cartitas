@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://wu25vrow6hkv"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_lc4di"]
+
+[resource]
+script = ExtResource("1_lc4di")
+card_name = "Forgotten Monk"
+cost = 1
+power = 2
+keywords = Array[int]([1])
+effect_text = "Reveal: Draw 1 card."

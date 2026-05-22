@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bg7jlb3h6vi75"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_458lp"]
+
+[resource]
+script = ExtResource("1_458lp")
+card_name = "Blood Brute"
+cost = 8
+power = 13
+keywords = Array[int]([5])
+effect_text = "Bleed: Damage enemies over time."

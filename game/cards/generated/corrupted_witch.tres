@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://byfgxjftl0h6f"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_dm3vc"]
+
+[resource]
+script = ExtResource("1_dm3vc")
+card_name = "Corrupted Witch"
+cost = 8
+power = 16
+keywords = Array[int]([4])
+effect_text = "Corrupt: Gains +2 Power after damage."

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cbbgs2ic0lhpt"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_0134p"]
+
+[resource]
+script = ExtResource("1_0134p")
+card_name = "Forgotten Ranger"
+cost = 8
+power = 13
+keywords = Array[int]([2])
+effect_text = "Ongoing: Adjacent allies gain +1 Power."

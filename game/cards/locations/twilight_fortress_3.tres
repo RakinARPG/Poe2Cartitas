@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://bfxmc52p5dud1"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_qtlb2"]
+
+[resource]
+script = ExtResource("1_qtlb2")
+location_name = "Twilight Fortress"
+effect_type = 9
+params = {
+"cost_reduction": 1
+}

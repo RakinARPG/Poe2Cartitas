@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://7kuo3r6im1gw"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_g0u5f"]
+
+[resource]
+script = ExtResource("1_g0u5f")
+card_name = "Vaal Champion"
+cost = 5
+power = 10
+keywords = Array[int]([1])
+effect_text = "Reveal: Draw 1 card."

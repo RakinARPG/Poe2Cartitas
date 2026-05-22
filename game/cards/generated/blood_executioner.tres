@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b4r1vyffddfbq"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_bm31t"]
+
+[resource]
+script = ExtResource("1_bm31t")
+card_name = "Blood Executioner"
+cost = 8
+power = 14
+keywords = Array[int]([5])
+effect_text = "Bleed: Damage enemies over time."

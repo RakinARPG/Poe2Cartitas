@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://xf7ouq3swuwi"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_k1ho0"]
+
+[resource]
+script = ExtResource("1_k1ho0")
+card_name = "Forgotten Marauder"
+cost = 3
+power = 7
+effect_text = "A warrior from Wraeclast."

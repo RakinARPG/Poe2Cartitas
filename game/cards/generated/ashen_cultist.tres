@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://gdigyabc4q6t"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_s3rek"]
+
+[resource]
+script = ExtResource("1_s3rek")
+card_name = "Ashen Cultist"
+cost = 1
+power = 1
+effect_text = "A warrior from Wraeclast."

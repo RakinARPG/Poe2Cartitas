@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://ck6kx5w7o01pa"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_q4ebf"]
+
+[resource]
+script = ExtResource("1_q4ebf")
+location_name = "Blood Temple"
+effect_type = 9
+params = {
+"cost_reduction": 1
+}

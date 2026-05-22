@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://d1bb5ymm3a5yq"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_r7o1o"]
+
+[resource]
+script = ExtResource("1_r7o1o")
+card_name = "Blood Marauder"
+cost = 7
+power = 13
+keywords = Array[int]([5])
+effect_text = "Bleed: Damage enemies over time."

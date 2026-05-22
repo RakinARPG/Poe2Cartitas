@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://60j5yvlhwa2b"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_blmg0"]
+
+[resource]
+script = ExtResource("1_blmg0")
+card_name = "Corrupted Revenant"
+cost = 8
+power = 15
+keywords = Array[int]([4])
+effect_text = "Corrupt: Gains +2 Power after damage."

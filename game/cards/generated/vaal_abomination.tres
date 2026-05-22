@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dpirddyqmu2ou"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_x0fgo"]
+
+[resource]
+script = ExtResource("1_x0fgo")
+card_name = "Vaal Abomination"
+cost = 2
+power = 4
+keywords = Array[int]([1])
+effect_text = "Reveal: Draw 1 card."

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://djjl3c3gawyry"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_1d6kx"]
+
+[resource]
+script = ExtResource("1_1d6kx")
+location_name = "Ancient Ruins"
+effect_type = 8
+params = {
+"max": 4,
+"min": -2
+}

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://dom7aitt1pt4y"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_b8efk"]
+
+[resource]
+script = ExtResource("1_b8efk")
+location_name = "Blood Catacombs"
+effect_type = 4
+params = {
+"ongoing_bonus": 1
+}

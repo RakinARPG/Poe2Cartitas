@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://bytxnfe1qule5"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_mcplc"]
+
+[resource]
+script = ExtResource("1_mcplc")
+location_name = "Forgotten Necropolis"
+effect_type = 5
+params = {
+"spawn_power": 2
+}

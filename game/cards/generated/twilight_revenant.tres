@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://byhlv47cvm3rb"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6l0qn"]
+
+[resource]
+script = ExtResource("1_6l0qn")
+card_name = "Twilight Revenant"
+cost = 5
+power = 11
+effect_text = "A warrior from Wraeclast."

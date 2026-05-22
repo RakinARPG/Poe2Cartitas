@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://1by0b2t4mja1"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4i0fb"]
+
+[resource]
+script = ExtResource("1_4i0fb")
+card_name = "Blood Priest"
+cost = 5
+power = 8
+keywords = Array[int]([5])
+effect_text = "Bleed: Damage enemies over time."

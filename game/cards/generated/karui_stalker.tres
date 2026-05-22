@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dw0hxrv8if5px"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_alce2"]
+
+[resource]
+script = ExtResource("1_alce2")
+card_name = "Karui Stalker"
+cost = 6
+power = 10
+keywords = Array[int]([1])
+effect_text = "Reveal: Draw 1 card."

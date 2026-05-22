@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://l3htrpy8c5u0"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_dorky"]
+
+[resource]
+script = ExtResource("1_dorky")
+card_name = "Ezomyte Champion"
+cost = 4
+power = 7
+effect_text = "A warrior from Wraeclast."

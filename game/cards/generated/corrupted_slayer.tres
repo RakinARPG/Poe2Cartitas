@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dcfl68e3q8dpb"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_i68gm"]
+
+[resource]
+script = ExtResource("1_i68gm")
+card_name = "Corrupted Slayer"
+cost = 6
+power = 10
+keywords = Array[int]([4, 2])
+effect_text = "Corrupt: Gains +2 Power after damage. Ongoing: Adjacent allies gain +1 Power."

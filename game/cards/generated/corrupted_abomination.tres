@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c2uosucxj7dt4"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_8nmkg"]
+
+[resource]
+script = ExtResource("1_8nmkg")
+card_name = "Corrupted Abomination"
+cost = 5
+power = 10
+keywords = Array[int]([4])
+effect_text = "Corrupt: Gains +2 Power after damage."

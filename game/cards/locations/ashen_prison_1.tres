@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://dmv6ahtpll0r3"]
+
+[ext_resource type="Script" uid="uid://cn7b60eikff4k" path="res://game/cards/LocationData.gd" id="1_6mg4p"]
+
+[resource]
+script = ExtResource("1_6mg4p")
+location_name = "Ashen Prison"
+effect_type = 7
+params = {
+"corrupt_power": 2
+}
