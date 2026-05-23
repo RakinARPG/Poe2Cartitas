@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://3wewfagksm06"]
+
+[ext_resource type="Script" uid="uid://bnt8x1vk72a8y" path="res://game/scenes/cards/CardNode.gd" id="1_6jfms"]
+
+[node name="CardNode" type="Panel" unique_id=903353553]
+offset_right = 180.0
+offset_bottom = 260.0
+script = ExtResource("1_6jfms")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1951355885]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NameLabel" type="Label" parent="." unique_id=1414383252]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="CostLabel" type="Label" parent="." unique_id=1227513958]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PowerLabel" type="Label" parent="." unique_id=1759168713]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="TextLabel" type="Label" parent="." unique_id=1348302188]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
