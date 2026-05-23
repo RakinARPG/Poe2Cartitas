@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://dtpmutnej0fe7"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_tcgse"]
+[ext_resource type="Resource" uid="uid://dcn3bquf57s3o" path="res://game/cards/generated/azmeri_necromancer.tres" id="2_iqfas"]
+[ext_resource type="Resource" uid="uid://2epr00yhsgsg" path="res://game/cards/generated/azmeri_stalker.tres" id="3_k71p5"]
+[ext_resource type="Resource" uid="uid://b44kfy45y8f" path="res://game/cards/generated/ezomyte_beast.tres" id="4_s2cij"]
+[ext_resource type="Resource" uid="uid://cdgxofdf465ku" path="res://game/cards/generated/ezomyte_revenant.tres" id="5_i5i0x"]
+[ext_resource type="Resource" uid="uid://bje8juux34str" path="res://game/cards/generated/ezomyte_witch.tres" id="6_5ndq4"]
+[ext_resource type="Resource" uid="uid://wu25vrow6hkv" path="res://game/cards/generated/forgotten_monk.tres" id="7_kq5t8"]
+[ext_resource type="Resource" uid="uid://jbfmnewqg6ly" path="res://game/cards/generated/karui_executioner.tres" id="8_gyboa"]
+[ext_resource type="Resource" uid="uid://dw0hxrv8if5px" path="res://game/cards/generated/karui_stalker.tres" id="9_u1ap5"]
+[ext_resource type="Resource" uid="uid://b5fnydbqi2dqv" path="res://game/cards/generated/twilight_executioner.tres" id="10_ab4by"]
+[ext_resource type="Resource" uid="uid://cmcy8raa3osg6" path="res://game/cards/generated/undying_champion.tres" id="11_f75p1"]
+[ext_resource type="Resource" uid="uid://dwcf1i8ecqwd6" path="res://game/cards/generated/undying_cultist.tres" id="12_xwufa"]
+[ext_resource type="Resource" uid="uid://dpirddyqmu2ou" path="res://game/cards/generated/vaal_abomination.tres" id="13_df7a0"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="14_2ig3k"]
+
+[resource]
+script = ExtResource("14_2ig3k")
+cards = Array[ExtResource("1_tcgse")]([ExtResource("2_iqfas"), ExtResource("3_k71p5"), ExtResource("4_s2cij"), ExtResource("5_i5i0x"), ExtResource("6_5ndq4"), ExtResource("7_kq5t8"), ExtResource("8_gyboa"), ExtResource("9_u1ap5"), ExtResource("10_ab4by"), ExtResource("11_f75p1"), ExtResource("12_xwufa"), ExtResource("13_df7a0")])

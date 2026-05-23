@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://bswo8wclcpjea"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4fsyv"]
+[ext_resource type="Resource" uid="uid://bbpg5p46js0rp" path="res://game/cards/generated/undying_brute.tres" id="2_cg0a4"]
+[ext_resource type="Resource" uid="uid://cmcy8raa3osg6" path="res://game/cards/generated/undying_champion.tres" id="3_upv7q"]
+[ext_resource type="Resource" uid="uid://c1ok77fqap1tj" path="res://game/cards/generated/undying_executioner.tres" id="4_w21ns"]
+[ext_resource type="Resource" uid="uid://clc1yj65wxdxk" path="res://game/cards/generated/undying_invoker.tres" id="5_kvmkp"]
+[ext_resource type="Resource" uid="uid://52ffyul3v71p" path="res://game/cards/generated/undying_slayer.tres" id="6_sjwck"]
+[ext_resource type="Resource" uid="uid://bbvlw21ek0t21" path="res://game/cards/generated/undying_titan.tres" id="7_ykwsr"]
+[ext_resource type="Resource" uid="uid://bm88phno8n3uf" path="res://game/cards/generated/wraeclast_titan.tres" id="8_pinyc"]
+[ext_resource type="Resource" uid="uid://okdtpvn4icyd" path="res://game/cards/generated/wraeclast_defiler.tres" id="9_wwrsx"]
+[ext_resource type="Resource" uid="uid://dcfl68e3q8dpb" path="res://game/cards/generated/corrupted_slayer.tres" id="10_50aar"]
+[ext_resource type="Resource" uid="uid://1by0b2t4mja1" path="res://game/cards/generated/blood_priest.tres" id="11_ew4np"]
+[ext_resource type="Resource" uid="uid://jsdxiibuo8s4" path="res://game/cards/generated/azmeri_slayer.tres" id="12_g8rll"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="13_vxlrb"]
+
+[resource]
+script = ExtResource("13_vxlrb")
+cards = Array[ExtResource("1_4fsyv")]([ExtResource("2_cg0a4"), ExtResource("3_upv7q"), ExtResource("4_w21ns"), ExtResource("5_kvmkp"), ExtResource("6_sjwck"), ExtResource("7_ykwsr"), ExtResource("8_pinyc"), ExtResource("2_cg0a4"), ExtResource("9_wwrsx"), ExtResource("10_50aar"), ExtResource("11_ew4np"), ExtResource("12_g8rll")])

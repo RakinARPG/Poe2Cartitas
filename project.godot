@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="CardGame2"
+run/main_scene="uid://d4cmwfjdyqji7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TurnManager="*uid://bfb3gys72lx7x"
+EffectResolver="*uid://dby2jh548rd46"
+LocationManager="*uid://ypwmsw0mekd"
 
 [physics]
 
