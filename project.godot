@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 TurnManager="*uid://bfb3gys72lx7x"
 EffectResolver="*uid://dby2jh548rd46"
 LocationManager="*uid://ypwmsw0mekd"
+DeckManager="*uid://e15bj4qpiyog"
 
 [physics]
 

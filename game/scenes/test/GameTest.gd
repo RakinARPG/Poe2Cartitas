@@ -7,6 +7,8 @@ extends Control
 @onready var resolve_button = $CanvasLayer/VBoxContainer/ResolveEffectsButton
 @onready var winner_button = $CanvasLayer/VBoxContainer/TestWinnerButton
 
+var test_deck
+
 const CardScene = preload(
 	"res://game/scenes/cards/CardNode.tscn"
 )
@@ -14,17 +16,11 @@ const CardScene = preload(
 func _ready():
 
 	print("GameTest Ready")
-
+#temporal
 	connect_buttons()
-	
-	#Temporalmente
-	var test_card = load(
-	"res://game/cards/generated/ashen_beast.tres")
-	var card = CardScene.instantiate()
-	add_child(card)
-	card.position = Vector2(500, 200)
-	card.setup(test_card)
-
+	test_deck = load(
+	"res://game/cards/decks/deck_reveal.tres")
+	DeckManager.load_deck(test_deck)
 
 func connect_buttons():
 
@@ -93,7 +89,12 @@ func _on_add_effect_pressed():
 		null,
 		{}
 	)
-
+	var drawn_card = DeckManager.draw_card()
+	if drawn_card != null:
+		print(
+		"Card Drawn: ",
+		drawn_card.card_name
+		)
 
 func _on_resolve_effects_pressed():
 
