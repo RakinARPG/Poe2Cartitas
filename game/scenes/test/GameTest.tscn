@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d4cmwfjdyqji7"]
 
 [ext_resource type="Script" uid="uid://d112h6d76df54" path="res://game/scenes/test/GameTest.gd" id="1_u8f20"]
+[ext_resource type="PackedScene" uid="uid://dl7my0j7onvf6" path="res://game/scenes/hand/HandManager.tscn" id="2_o0ub3"]
 
 [node name="GameTest" type="Control" unique_id=1533657770]
 layout_mode = 3
@@ -10,29 +11,50 @@ script = ExtResource("1_u8f20")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2121567243]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1224318527]
+unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 56.0
 
 [node name="StartGameButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1764932592]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Start Button
 "
 
 [node name="AdvanceTurnButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=504524309]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Advance Button
 "
 
 [node name="AddEffectButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=716015367]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Add Effect
 "
 
 [node name="ResolveEffectsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=197729964]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Resolve effect"
 
 [node name="TestWinnerButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=642723486]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Test Winnter
 "
+
+[node name="DrawCardButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=603230587]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Roba"
+
+[node name="HandManager" parent="CanvasLayer" unique_id=1199159261 instance=ExtResource("2_o0ub3")]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = -1
+anchor_top = 0.551
+anchor_right = 1.0
+anchor_bottom = 0.93
+grow_horizontal = 2
+grow_vertical = 0

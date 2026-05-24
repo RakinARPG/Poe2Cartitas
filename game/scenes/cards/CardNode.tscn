@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bnt8x1vk72a8y" path="res://game/scenes/cards/CardNode.gd" id="1_6jfms"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jfms"]
+
 [node name="CardNode" type="Panel" unique_id=903353553]
+custom_minimum_size = Vector2(180, 260)
 offset_right = 180.0
 offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6jfms")
 script = ExtResource("1_6jfms")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1951355885]

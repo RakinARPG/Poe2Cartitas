@@ -6,6 +6,8 @@ extends Control
 @onready var add_effect_button = $CanvasLayer/VBoxContainer/AddEffectButton
 @onready var resolve_button = $CanvasLayer/VBoxContainer/ResolveEffectsButton
 @onready var winner_button = $CanvasLayer/VBoxContainer/TestWinnerButton
+@onready var hand_manager = %HandManager
+@onready var draw_button = %DrawCardButton
 
 var test_deck
 
@@ -21,7 +23,16 @@ func _ready():
 	test_deck = load(
 	"res://game/cards/decks/deck_reveal.tres")
 	DeckManager.load_deck(test_deck)
+	
+	for i in range(3):
 
+		var card = DeckManager.draw_card()
+
+		if card != null:
+
+			hand_manager.add_card(card)
+		
+		
 func connect_buttons():
 
 	start_button.pressed.connect(
@@ -43,7 +54,10 @@ func connect_buttons():
 	winner_button.pressed.connect(
 		_on_test_winner_pressed
 	)
-
+	
+	draw_button.pressed.connect(
+		_on_draw_card_pressed
+	)
 
 func _on_start_game_pressed():
 
@@ -126,3 +140,11 @@ func _on_test_winner_pressed():
 	)
 
 	LocationManager.calculate_final_winner()
+	
+func _on_draw_card_pressed():
+
+	var card = DeckManager.draw_card()
+
+	if card != null:
+
+		hand_manager.add_card(card)

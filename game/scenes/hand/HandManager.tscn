@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dl7my0j7onvf6"]
+
+[ext_resource type="Script" uid="uid://duaf6opavdipq" path="res://game/scenes/hand/HandManager.gd" id="1_48eia"]
+
+[node name="HandManager" type="Control" unique_id=1199159261]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_48eia")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1412694949]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_group_ = true
