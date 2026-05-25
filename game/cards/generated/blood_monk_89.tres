@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b3gm14e1oh5qt"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_ff42i"]
+
+[resource]
+script = ExtResource("1_ff42i")
+card_name = "Blood Monk"
+cost = 4
+power = 6
+keywords = Array[int]([5, 1])
+effect_text = "Bleed: Damage enemies over time. Reveal: Draw 1 card."

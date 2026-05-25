@@ -9,6 +9,11 @@ extends Control
 @onready var hand_manager = %HandManager
 @onready var draw_button = %DrawCardButton
 
+const LocationScene = preload(
+	"res://game/scenes/board/LocationSlot.tscn"
+)
+
+@onready var locations_container = %LocationsContainer
 var test_deck
 
 const CardScene = preload(
@@ -23,6 +28,8 @@ func _ready():
 	test_deck = load(
 	"res://game/cards/decks/deck_reveal.tres")
 	DeckManager.load_deck(test_deck)
+	LocationManager.setup_locations()
+	setup_locations()
 	
 	for i in range(3):
 
@@ -148,3 +155,24 @@ func _on_draw_card_pressed():
 	if card != null:
 
 		hand_manager.add_card(card)
+		
+func setup_locations():
+
+	for child in locations_container.get_children():
+
+		child.queue_free()
+
+	for i in range(3):
+
+		var location = LocationScene.instantiate()
+
+		locations_container.add_child(
+			location
+		)
+
+		var location_data = LocationManager.active_locations[i]
+
+		location.setup(
+			location_data.location_name,
+			i
+		)

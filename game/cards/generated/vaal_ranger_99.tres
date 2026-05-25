@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dk8u06p5j84hl"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_qsix1"]
+
+[resource]
+script = ExtResource("1_qsix1")
+card_name = "Vaal Ranger"
+cost = 4
+power = 6
+keywords = Array[int]([2])
+effect_text = "Ongoing: Adjacent allies gain +1 Power."

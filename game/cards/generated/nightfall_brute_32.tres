@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://buxdu10cuklr"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_7xk7y"]
+
+[resource]
+script = ExtResource("1_7xk7y")
+card_name = "Nightfall Brute"
+cost = 1
+power = 2
+keywords = Array[int]([1])
+effect_text = "Reveal: Draw 1 card."

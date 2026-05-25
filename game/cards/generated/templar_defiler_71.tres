@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dn52e3v7iy6pr"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4fem5"]
+
+[resource]
+script = ExtResource("1_4fem5")
+card_name = "Templar Defiler"
+cost = 6
+power = 13
+effect_text = "A warrior from Wraeclast."

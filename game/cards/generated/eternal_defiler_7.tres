@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://g7njf6ut5u2p"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_br50m"]
+
+[resource]
+script = ExtResource("1_br50m")
+card_name = "Eternal Defiler"
+cost = 4
+power = 9
+effect_text = "A warrior from Wraeclast."

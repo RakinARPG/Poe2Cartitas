@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c1p0soapb5vws"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_s6j47"]
+
+[resource]
+script = ExtResource("1_s6j47")
+card_name = "Azmeri Ranger"
+cost = 2
+power = 4
+effect_text = "A warrior from Wraeclast."

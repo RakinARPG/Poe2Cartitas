@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ijd6dtayjosv"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_iuhby"]
+
+[resource]
+script = ExtResource("1_iuhby")
+card_name = "Nightfall Stalker"
+cost = 1
+power = 1
+effect_text = "A warrior from Wraeclast."

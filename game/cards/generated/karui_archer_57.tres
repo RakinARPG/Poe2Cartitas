@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bqdn4ihcws7up"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_mac2m"]
+
+[resource]
+script = ExtResource("1_mac2m")
+card_name = "Karui Archer"
+cost = 5
+power = 10
+effect_text = "A warrior from Wraeclast."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bo1u3xppkpuek"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_ngn47"]
+
+[resource]
+script = ExtResource("1_ngn47")
+card_name = "Forgotten Invoker"
+cost = 1
+power = 3
+effect_text = "A warrior from Wraeclast."

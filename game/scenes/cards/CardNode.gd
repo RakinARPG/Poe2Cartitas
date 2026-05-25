@@ -1,14 +1,10 @@
 extends Panel
 
 
-signal card_dropped(
-	card_node,
-	drop_position
-)
+signal card_released(card_node)
 
 
 var data: CardData
-
 
 var is_dragging := false
 
@@ -16,6 +12,7 @@ var drag_offset := Vector2.ZERO
 
 var original_position := Vector2.ZERO
 
+var is_locked := false
 
 @onready var art_rect = %TextureRect
 @onready var name_label = %NameLabel
@@ -27,9 +24,13 @@ var original_position := Vector2.ZERO
 func setup(card_data: CardData):
 
 	data = card_data
+
 	name_label.text = data.card_name
+
 	cost_label.text = str(data.cost)
+
 	power_label.text = str(data.power)
+
 	text_label.text = data.effect_text
 
 	if data.art != null:
@@ -52,14 +53,17 @@ func _gui_input(event):
 				stop_drag()
 
 
-	if event is InputEventMouseMotion:
+func _process(delta):
 
-		if is_dragging:
+	if is_dragging:
 
-			global_position = get_global_mouse_position() - drag_offset
+		global_position = get_global_mouse_position() - drag_offset
 
 
 func start_drag(event):
+	
+	if is_locked:
+		return
 
 	is_dragging = true
 
@@ -74,7 +78,4 @@ func stop_drag():
 
 		is_dragging = false
 
-		card_dropped.emit(
-			self,
-			global_position
-		)
+		card_released.emit(self)

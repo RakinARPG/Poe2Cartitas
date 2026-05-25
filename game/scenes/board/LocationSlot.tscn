@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b3fribqr2xudn"]
+
+[ext_resource type="Script" uid="uid://ld82pq61tewq" path="res://game/scenes/board/LocationSlot.gd" id="1_gfaty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjyk0"]
+bg_color = Color(0.13319641, 0.13319641, 0.13319635, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="LocationSlot" type="Panel" unique_id=1928927388]
+custom_minimum_size = Vector2(320, 420)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yjyk0")
+script = ExtResource("1_gfaty")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2057934483]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LocationNameLabel" type="Label" parent="VBoxContainer" unique_id=1920129271]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PowerLabel" type="Label" parent="VBoxContainer" unique_id=711042207]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CardsContainer" type="GridContainer" parent="VBoxContainer" unique_id=1292437584]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2

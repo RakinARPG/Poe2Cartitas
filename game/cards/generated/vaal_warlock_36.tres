@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cp1saudn2kbm"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_1gdgc"]
+
+[resource]
+script = ExtResource("1_1gdgc")
+card_name = "Vaal Warlock"
+cost = 3
+power = 6
+effect_text = "A warrior from Wraeclast."

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://vls415ggugag"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6ip3f"]
+
+[resource]
+script = ExtResource("1_6ip3f")
+card_name = "Corrupted Monk"
+cost = 2
+power = 2
+keywords = Array[int]([4])
+effect_text = "Corrupt: Gains +2 Power after damage."

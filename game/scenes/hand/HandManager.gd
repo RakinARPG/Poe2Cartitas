@@ -27,8 +27,8 @@ func add_card(card_data: CardData):
 
 	cards_in_hand.append(card_node)
 
-	card_node.card_dropped.connect(
-		_on_card_dropped
+	card_node.card_released.connect(
+		_on_card_released
 	)
 
 	if hide_hand:
@@ -47,21 +47,16 @@ func remove_card(card_node):
 
 		cards_in_hand.erase(card_node)
 
-	card_node.queue_free()
-
 
 func hide_card_visual(card_node):
 
 	card_node.modulate = Color.BLACK
 
 
-func _on_card_dropped(
-	card_node,
-	drop_position
-):
+func _on_card_released(card_node):
 
 	print(
-		"Card dropped: ",
+		"Card released: ",
 		card_node.data.card_name
 	)
 
@@ -70,28 +65,71 @@ func _on_card_dropped(
 
 func validate_card_play(card_node):
 
-	var mana_available = TurnManager.get_current_mana(
-			player_id
-		)
+	var mana_available = TurnManager.current_mana[player_id]
 
 	var card_cost = card_node.data.cost
 
+	print(
+		"Mana available: ",
+		mana_available
+	)
+
+	print(
+		"Card cost: ",
+		card_cost
+	)
+
 	if card_cost > mana_available:
 
-		print(
-			"NOT ENOUGH MANA"
-		)
+		print("NOT ENOUGH MANA")
 
 		card_node.global_position = card_node.original_position
 
 		return
 
-	print(
-		"Card can be played"
+	var played = try_play_card(card_node)
+
+	if played:
+
+		print("Card played")
+
+		TurnManager.spend_mana(
+			player_id,
+			card_cost
+		)
+
+		remove_card(card_node)
+
+	else:
+
+		print("Invalid location")
+
+		card_node.global_position = card_node.original_position
+
+
+func try_play_card(card_node) -> bool:
+
+	var locations = get_tree().get_nodes_in_group(
+		"location_slots"
 	)
 
-	remove_card(card_node)
+	for location in locations:
 
-	# luego:
-	#
-	# BoardManager.play_card()
+		var rect = Rect2(
+			location.global_position,
+			location.size
+		)
+
+		if rect.has_point(
+			card_node.global_position
+		):
+
+			var success = location.add_card_to_location(
+				card_node
+			)
+
+			if success:
+
+				return true
+
+	return false

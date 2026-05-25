@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c20ctjc6d4wt2"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4hy2v"]
+
+[resource]
+script = ExtResource("1_4hy2v")
+card_name = "Azmeri Necromancer"
+cost = 1
+power = 2
+effect_text = "A warrior from Wraeclast."

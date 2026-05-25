@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dtso7blid0ohp"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6w5wo"]
+
+[resource]
+script = ExtResource("1_6w5wo")
+card_name = "Nightfall Champion"
+cost = 3
+power = 7
+effect_text = "A warrior from Wraeclast."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://pdo4gtqw2r7c"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_pc6hw"]
+
+[resource]
+script = ExtResource("1_pc6hw")
+card_name = "Templar Archer"
+cost = 4
+power = 8
+effect_text = "A warrior from Wraeclast."

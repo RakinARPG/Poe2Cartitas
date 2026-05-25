@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bi66djpk8c4k5"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_rkm6n"]
+
+[resource]
+script = ExtResource("1_rkm6n")
+card_name = "Corrupted Stalker"
+cost = 2
+power = 2
+keywords = Array[int]([4])
+effect_text = "Corrupt: Gains +2 Power after damage."

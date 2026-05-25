@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://be8uqb23sjf50"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_2t8lx"]
+
+[resource]
+script = ExtResource("1_2t8lx")
+card_name = "Wraeclast Titan"
+cost = 1
+power = 3
+effect_text = "A warrior from Wraeclast."

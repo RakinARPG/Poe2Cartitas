@@ -1,9 +1,11 @@
 @tool
 extends EditorScript
 
-const CardData = preload("res://game/cards/DataCard.gd")
+const CardData = preload(
+	"res://game/cards/DataCard.gd"
+)
 
-const OUTPUT_PATH := "res://game/cards/generated/"
+const OUTPUT_PATH :="res://game/cards/generated/"
 
 
 const PREFIXES = [
@@ -23,6 +25,7 @@ const PREFIXES = [
 	"Forgotten",
 	"Wraeclast"
 ]
+
 
 const UNITS = [
 	"Marauder",
@@ -52,8 +55,9 @@ func _run():
 
 	randomize()
 
-	# Crear carpeta automáticamente
-	DirAccess.make_dir_recursive_absolute(OUTPUT_PATH)
+	DirAccess.make_dir_recursive_absolute(
+		OUTPUT_PATH
+	)
 
 	for i in range(100):
 
@@ -65,9 +69,12 @@ func _run():
 			.replace(" ", "_")
 		)
 
-		var save_path = OUTPUT_PATH + file_name + ".tres"
+		var save_path = OUTPUT_PATH + file_name + "_" + str(i) + ".tres"
 
-		ResourceSaver.save(card, save_path)
+		ResourceSaver.save(
+			card,
+			save_path
+		)
 
 	print("100 cartas generadas")
 
@@ -77,10 +84,12 @@ func generate_card() -> CardData:
 	var card := CardData.new()
 
 	# COST
-	card.cost = randi_range(1, 8)
+	card.cost = generate_cost()
 
 	# KEYWORDS
-	card.keywords = generate_keywords(card.cost)
+	card.keywords = generate_keywords(
+		card.cost
+	)
 
 	# POWER
 	card.power = generate_balanced_power(
@@ -89,7 +98,9 @@ func generate_card() -> CardData:
 	)
 
 	# NAME
-	card.card_name = generate_name(card.keywords)
+	card.card_name = generate_name(
+		card.keywords
+	)
 
 	# EFFECT
 	card.effect_text = generate_effect_text(
@@ -99,7 +110,36 @@ func generate_card() -> CardData:
 	return card
 
 
-func generate_keywords(cost: int) -> Array[int]:
+func generate_cost() -> int:
+
+	var roll = randi_range(1, 100)
+
+	# Muy comunes
+	if roll <= 30:
+		return 1
+
+	if roll <= 55:
+		return 2
+
+	# Comunes
+	if roll <= 75:
+		return 3
+
+	# Menos comunes
+	if roll <= 88:
+		return 4
+
+	# Raras
+	if roll <= 96:
+		return 5
+
+	# Muy raras
+	return 6
+
+
+func generate_keywords(
+	cost: int
+) -> Array[int]:
 
 	var result: Array[int] = []
 
@@ -112,12 +152,29 @@ func generate_keywords(cost: int) -> Array[int]:
 
 		result.append(keyword)
 
-	# Chance pequeña de doble keyword
-	if cost >= 5 and randi_range(1, 100) <= 15:
+	# Chance de doble keyword
+	var double_keyword_chance := 0
+
+	match cost:
+
+		4:
+			double_keyword_chance = 10
+
+		5:
+			double_keyword_chance = 25
+
+		6:
+			double_keyword_chance = 45
+
+	if randi_range(
+		1,
+		100
+	) <= double_keyword_chance:
 
 		var second = randi_range(1, 5)
 
 		if not result.has(second):
+
 			result.append(second)
 
 	return result
@@ -164,13 +221,19 @@ func generate_name(
 
 	var unit = UNITS.pick_random()
 
-	if keywords.has(CardData.Keyword.BLEED):
+	if keywords.has(
+		CardData.Keyword.BLEED
+	):
 		prefix = "Blood"
 
-	if keywords.has(CardData.Keyword.CORRUPT):
+	if keywords.has(
+		CardData.Keyword.CORRUPT
+	):
 		prefix = "Corrupted"
 
-	if keywords.has(CardData.Keyword.LAST_BREATH):
+	if keywords.has(
+		CardData.Keyword.LAST_BREATH
+	):
 		prefix = "Undying"
 
 	return prefix + " " + unit
@@ -181,7 +244,10 @@ func generate_effect_text(
 ) -> String:
 
 	if keywords.is_empty():
-		return "A warrior from Wraeclast."
+
+		return (
+			"A warrior from Wraeclast."
+		)
 
 	var lines: Array[String] = []
 
@@ -190,26 +256,31 @@ func generate_effect_text(
 		match keyword:
 
 			CardData.Keyword.REVEAL:
+
 				lines.append(
 					"Reveal: Draw 1 card."
 				)
 
 			CardData.Keyword.ONGOING:
+
 				lines.append(
 					"Ongoing: Adjacent allies gain +1 Power."
 				)
 
 			CardData.Keyword.LAST_BREATH:
+
 				lines.append(
 					"Last Breath: Summon a 1/1 Spirit."
 				)
 
 			CardData.Keyword.CORRUPT:
+
 				lines.append(
 					"Corrupt: Gains +2 Power after damage."
 				)
 
 			CardData.Keyword.BLEED:
+
 				lines.append(
 					"Bleed: Damage enemies over time."
 				)

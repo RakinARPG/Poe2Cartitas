@@ -29,6 +29,10 @@ var current_turn: int = 1
 var max_turns: int = 6
 
 var mana: Array[int] = [1, 2, 3, 4, 5, 6]
+var current_mana := {
+	0: 0,
+	1: 0
+}
 
 
 func start_game():
@@ -75,6 +79,40 @@ func get_current_mana(player_id: int) -> int:
 
 	return mana[index]
 
+func reset_mana():
+
+	var mana_for_turn = mana[
+			clamp(
+				current_turn - 1,
+				0,
+				mana.size() - 1
+			)
+		]
+
+	current_mana[0] = mana_for_turn
+
+	current_mana[1] = mana_for_turn
+
+	print(
+		"Mana refreshed: ",
+		mana_for_turn
+	)
+
+
+func spend_mana(
+	player_id: int,
+	amount: int
+):
+
+	current_mana[player_id] -= amount
+
+	print(
+		"Player ",
+		player_id,
+		" mana left: ",
+		current_mana[player_id]
+	)
+
 
 func start_draw_phase():
 
@@ -99,7 +137,10 @@ func start_draw_phase():
 	start_planning_phase()
 
 
+
 func start_planning_phase():
+
+	reset_mana()
 
 	change_state(GameState.PLANNING)
 
@@ -107,17 +148,10 @@ func start_planning_phase():
 
 	print(
 		"Current Mana: ",
-		get_current_mana(0)
+		current_mana[0]
 	)
 
 	turn_started.emit(current_turn)
-
-	# aquí luego:
-	#
-	# enable player input
-	# allow card placement
-	# planning timer
-	# AI planning
 
 
 func start_reveal_phase():
