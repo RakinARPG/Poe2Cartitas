@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bws1b06dbp8yo"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_ukpba"]
+
+[resource]
+script = ExtResource("1_ukpba")
+card_name = "Nightfall Cultist"
+cost = 3
+power = 4
+keywords = Array[int]([2])
+effect_text = "Ongoing: Gain +1 Power each turn."

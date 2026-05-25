@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://hedjxfvcfjj2"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_w74dw"]
+
+[resource]
+script = ExtResource("1_w74dw")
+card_name = "Undying Warlock"
+cost = 3
+power = 6
+keywords = Array[int]([3])
+effect_text = "Last Breath: Summon a Spirit."

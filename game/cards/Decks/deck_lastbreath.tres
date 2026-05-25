@@ -1,19 +1,20 @@
 [gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://bswo8wclcpjea"]
 
-[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4fsyv"]
-[ext_resource type="Resource" uid="uid://cawdhc0f1203p" path="res://game/cards/generated/undying_archer_55.tres" id="2_cg0a4"]
-[ext_resource type="Resource" uid="uid://ca3hkn7vmejv6" path="res://game/cards/generated/undying_brute_69.tres" id="3_upv7q"]
-[ext_resource type="Resource" uid="uid://fm83c0336pey" path="res://game/cards/generated/undying_cultist_49.tres" id="4_w21ns"]
-[ext_resource type="Resource" uid="uid://w3rcb0ifinwg" path="res://game/cards/generated/undying_defiler_30.tres" id="5_kvmkp"]
-[ext_resource type="Resource" uid="uid://3klknh14kkxl" path="res://game/cards/generated/undying_invoker_59.tres" id="6_sjwck"]
-[ext_resource type="Resource" uid="uid://b6f4e2f0r4smq" path="res://game/cards/generated/undying_invoker_70.tres" id="7_ykwsr"]
-[ext_resource type="Resource" uid="uid://d23vuv38xjfck" path="res://game/cards/generated/undying_marauder_64.tres" id="8_pinyc"]
-[ext_resource type="Resource" uid="uid://yqg118b5k4y3" path="res://game/cards/generated/undying_monk_47.tres" id="9_wwrsx"]
-[ext_resource type="Resource" uid="uid://bm70rrtyoomf" path="res://game/cards/generated/undying_necromancer_26.tres" id="10_50aar"]
-[ext_resource type="Resource" uid="uid://extb3kxrpfye" path="res://game/cards/generated/undying_stalker_35.tres" id="11_ew4np"]
-[ext_resource type="Resource" uid="uid://bm580akmai4wl" path="res://game/cards/generated/undying_titan_31.tres" id="12_g8rll"]
-[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="13_vxlrb"]
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_cg0a4"]
+[ext_resource type="Resource" uid="uid://bkrhlnd681utp" path="res://game/cards/generated/undying_marauder_17.tres" id="2_upv7q"]
+[ext_resource type="Resource" uid="uid://dlc71inadyjb2" path="res://game/cards/generated/undying_necromancer_5.tres" id="3_w21ns"]
+[ext_resource type="Resource" uid="uid://hedjxfvcfjj2" path="res://game/cards/generated/undying_warlock_82.tres" id="4_kvmkp"]
+[ext_resource type="Resource" uid="uid://421l58yaipuk" path="res://game/cards/generated/undying_titan_12.tres" id="5_sjwck"]
+[ext_resource type="Resource" uid="uid://c4ac527pn3sn4" path="res://game/cards/generated/undying_priest_9.tres" id="6_ykwsr"]
+[ext_resource type="Resource" uid="uid://dn452kgx0e8c1" path="res://game/cards/generated/undying_marauder_65.tres" id="7_pinyc"]
+[ext_resource type="Resource" uid="uid://bhf7grpirxa3t" path="res://game/cards/generated/undying_brute_33.tres" id="8_wwrsx"]
+[ext_resource type="Resource" uid="uid://cwlwtn5gqfxiq" path="res://game/cards/generated/undying_ranger_56.tres" id="9_50aar"]
+[ext_resource type="Resource" uid="uid://jlwjiuwhrpm0" path="res://game/cards/generated/forgotten_marauder_30.tres" id="10_ew4np"]
+[ext_resource type="Resource" uid="uid://c1whlloe5luvs" path="res://game/cards/generated/ezomyte_ranger_98.tres" id="11_g8rll"]
+[ext_resource type="Resource" uid="uid://c6gfidmdu6p4u" path="res://game/cards/generated/eternal_archer_67.tres" id="12_vxlrb"]
+[ext_resource type="Resource" uid="uid://bmq0x5usoborg" path="res://game/cards/generated/corrupted_archer_3.tres" id="13_yr8kh"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="14_ksdpb"]
 
 [resource]
-script = ExtResource("13_vxlrb")
-cards = Array[ExtResource("1_4fsyv")]([ExtResource("2_cg0a4"), ExtResource("3_upv7q"), ExtResource("4_w21ns"), ExtResource("5_kvmkp"), ExtResource("6_sjwck"), ExtResource("7_ykwsr"), ExtResource("8_pinyc"), ExtResource("9_wwrsx"), ExtResource("10_50aar"), ExtResource("11_ew4np"), ExtResource("12_g8rll"), ExtResource("8_pinyc")])
+script = ExtResource("14_ksdpb")
+cards = Array[ExtResource("1_cg0a4")]([ExtResource("2_upv7q"), ExtResource("3_w21ns"), ExtResource("4_kvmkp"), ExtResource("5_sjwck"), ExtResource("6_ykwsr"), ExtResource("7_pinyc"), ExtResource("8_wwrsx"), ExtResource("9_50aar"), ExtResource("10_ew4np"), ExtResource("11_g8rll"), ExtResource("12_vxlrb"), ExtResource("13_yr8kh")])

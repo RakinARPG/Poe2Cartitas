@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://o4myaqofcl4g"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_gkn7m"]
+
+[resource]
+script = ExtResource("1_gkn7m")
+card_name = "Twilight Executioner"
+cost = 4
+power = 9
+effect_text = "A warrior from Wraeclast."

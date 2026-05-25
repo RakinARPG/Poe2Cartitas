@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c2jhae70xfh4a"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_n3bou"]
+
+[resource]
+script = ExtResource("1_n3bou")
+card_name = "Forgotten Necromancer"
+cost = 5
+power = 7
+keywords = Array[int]([2])
+effect_text = "Ongoing: Gain +1 Power each turn."

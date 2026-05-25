@@ -22,6 +22,10 @@ EffectResolver="*uid://dby2jh548rd46"
 LocationManager="*uid://ypwmsw0mekd"
 DeckManager="*uid://e15bj4qpiyog"
 
+[global_group]
+
+hand_manager=""
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

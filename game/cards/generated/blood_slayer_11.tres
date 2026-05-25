@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://du73ee84llqxd"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6nymu"]
+
+[resource]
+script = ExtResource("1_6nymu")
+card_name = "Blood Slayer"
+cost = 2
+power = 3
+keywords = Array[int]([5])
+effect_text = "Bleed enemies over time."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://wlxwompe5ti8"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_w0b8h"]
+
+[resource]
+script = ExtResource("1_w0b8h")
+card_name = "Bloodbound Monk"
+cost = 2
+power = 4
+effect_text = "A warrior from Wraeclast."

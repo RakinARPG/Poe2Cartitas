@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c17k018nyit5j"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_8aytc"]
+
+[resource]
+script = ExtResource("1_8aytc")
+card_name = "Corrupted Witch"
+cost = 3
+power = 7
+effect_text = "A warrior from Wraeclast."

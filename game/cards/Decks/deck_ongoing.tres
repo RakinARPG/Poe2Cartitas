@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://bavrkboohxpbw"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_l18k6"]
+[ext_resource type="Resource" uid="uid://b0v6k0djw0kn2" path="res://game/cards/generated/blackguard_abomination_52.tres" id="2_wbiiu"]
+[ext_resource type="Resource" uid="uid://bws1b06dbp8yo" path="res://game/cards/generated/nightfall_cultist_1.tres" id="3_j87g7"]
+[ext_resource type="Resource" uid="uid://c1whlloe5luvs" path="res://game/cards/generated/ezomyte_ranger_98.tres" id="4_qe01t"]
+[ext_resource type="Resource" uid="uid://clmbko3kqnctf" path="res://game/cards/generated/azmeri_executioner_88.tres" id="5_pqeqj"]
+[ext_resource type="Resource" uid="uid://cqqccgftqfh1n" path="res://game/cards/generated/forgotten_cultist_7.tres" id="6_h3se2"]
+[ext_resource type="Resource" uid="uid://c2jhae70xfh4a" path="res://game/cards/generated/forgotten_necromancer_85.tres" id="7_aprfk"]
+[ext_resource type="Resource" uid="uid://v2lsqlonyw7m" path="res://game/cards/generated/wraeclast_revenant_49.tres" id="8_rbsep"]
+[ext_resource type="Resource" uid="uid://d22xxk6vqy0ig" path="res://game/cards/generated/ashen_titan_8.tres" id="9_8coex"]
+[ext_resource type="Resource" uid="uid://dbpws0ip64o7w" path="res://game/cards/generated/azmeri_abomination_69.tres" id="10_nc2fj"]
+[ext_resource type="Resource" uid="uid://biukoprjssxkx" path="res://game/cards/generated/corrupted_warlock_42.tres" id="11_et541"]
+[ext_resource type="Resource" uid="uid://6ny2tmatm0ec" path="res://game/cards/generated/blood_executioner_26.tres" id="12_awnwh"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="13_1nrm3"]
+
+[resource]
+script = ExtResource("13_1nrm3")
+cards = Array[ExtResource("1_l18k6")]([ExtResource("2_wbiiu"), ExtResource("3_j87g7"), ExtResource("4_qe01t"), ExtResource("5_pqeqj"), ExtResource("6_h3se2"), ExtResource("7_aprfk"), ExtResource("8_rbsep"), ExtResource("5_pqeqj"), ExtResource("9_8coex"), ExtResource("10_nc2fj"), ExtResource("11_et541"), ExtResource("12_awnwh")])

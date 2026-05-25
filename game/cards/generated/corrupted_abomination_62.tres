@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bocjevnxxoxrq"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_p7ej3"]
+
+[resource]
+script = ExtResource("1_p7ej3")
+card_name = "Corrupted Abomination"
+cost = 4
+power = 5
+keywords = Array[int]([1])
+effect_id = 1
+effect_value = 1
+effect_text = "Reveal: Draw 1 card."

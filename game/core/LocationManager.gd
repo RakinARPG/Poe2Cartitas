@@ -1,5 +1,6 @@
 extends Node
 
+
 signal locations_selected(locations)
 
 signal power_changed(
@@ -22,15 +23,23 @@ const LOCATIONS_PATH := "res://game/cards/locations/"
 var active_locations: Array = []
 
 
-# power[player_id][location_idx]
+# POWER TRACKING
 #
-# Ejemplo:
-# power[0][1]
-# jugador 0 en location 1
+# power[player_id][location_idx]
 #
 var power := {
 	0: [0, 0, 0],
 	1: [0, 0, 0]
+}
+
+
+# BOARD STATE
+#
+# board_cards[player][location]
+#
+var board_cards := {
+	0: [[], [], []],
+	1: [[], [], []]
 }
 
 
@@ -94,6 +103,25 @@ func load_all_locations() -> Array:
 	dir.list_dir_end()
 
 	return locations
+
+
+func add_card_to_board(
+	player_id: int,
+	location_idx: int,
+	card_node
+):
+
+	board_cards[player_id][location_idx].append(
+		card_node
+	)
+
+
+func get_cards_at_location(
+	player_id: int,
+	location_idx: int
+) -> Array:
+
+	return board_cards[player_id][location_idx]
 
 
 func add_power(
@@ -198,4 +226,9 @@ func reset_board():
 	power = {
 		0: [0, 0, 0],
 		1: [0, 0, 0]
+	}
+
+	board_cards = {
+		0: [[], [], []],
+		1: [[], [], []]
 	}

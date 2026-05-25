@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://o1adfsmm1bn0"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_b2kwy"]
+
+[resource]
+script = ExtResource("1_b2kwy")
+card_name = "Wraeclast Titan"
+cost = 4
+power = 7
+keywords = Array[int]([1])
+effect_id = 3
+effect_value = 1
+effect_text = "Reveal: Apply Bleed."

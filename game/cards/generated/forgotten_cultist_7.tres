@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cqqccgftqfh1n"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_au146"]
+
+[resource]
+script = ExtResource("1_au146")
+card_name = "Forgotten Cultist"
+cost = 4
+power = 5
+keywords = Array[int]([2])
+effect_text = "Ongoing: Gain +1 Power each turn."

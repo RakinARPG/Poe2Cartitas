@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://d2cjl513we505"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_olonf"]
+[ext_resource type="Resource" uid="uid://ha8sdgab2jqa" path="res://game/cards/generated/corrupted_executioner_35.tres" id="2_1di1h"]
+[ext_resource type="Resource" uid="uid://clorneclhqnlv" path="res://game/cards/generated/corrupted_cultist_0.tres" id="3_0l5b5"]
+[ext_resource type="Resource" uid="uid://b18cva6dvvbsb" path="res://game/cards/generated/corrupted_titan_38.tres" id="4_5w6yl"]
+[ext_resource type="Resource" uid="uid://c07yjd1tdd7jq" path="res://game/cards/generated/corrupted_monk_89.tres" id="5_n74pe"]
+[ext_resource type="Resource" uid="uid://r4fgnguhq0n0" path="res://game/cards/generated/corrupted_ranger_15.tres" id="6_4yjbt"]
+[ext_resource type="Resource" uid="uid://b2lwmaeeufyim" path="res://game/cards/generated/corrupted_witch_43.tres" id="7_pciip"]
+[ext_resource type="Resource" uid="uid://c45qfp2dvs31y" path="res://game/cards/generated/corrupted_marauder_47.tres" id="8_mhcqg"]
+[ext_resource type="Resource" uid="uid://b0dtl0uk8b6by" path="res://game/cards/generated/corrupted_beast_60.tres" id="9_mjogh"]
+[ext_resource type="Resource" uid="uid://8b32h18wxm4q" path="res://game/cards/generated/corrupted_stalker_63.tres" id="10_n8pah"]
+[ext_resource type="Resource" uid="uid://bggy8y0skqs8t" path="res://game/cards/generated/twilight_abomination_84.tres" id="11_xfplu"]
+[ext_resource type="Resource" uid="uid://c4ac527pn3sn4" path="res://game/cards/generated/undying_priest_9.tres" id="12_24ayx"]
+[ext_resource type="Resource" uid="uid://c555ro4rg3lyb" path="res://game/cards/generated/templar_ranger_44.tres" id="13_fvxse"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="14_4q4pw"]
+
+[resource]
+script = ExtResource("14_4q4pw")
+cards = Array[ExtResource("1_olonf")]([ExtResource("2_1di1h"), ExtResource("3_0l5b5"), ExtResource("4_5w6yl"), ExtResource("5_n74pe"), ExtResource("6_4yjbt"), ExtResource("7_pciip"), ExtResource("8_mhcqg"), ExtResource("9_mjogh"), ExtResource("10_n8pah"), ExtResource("11_xfplu"), ExtResource("12_24ayx"), ExtResource("13_fvxse")])

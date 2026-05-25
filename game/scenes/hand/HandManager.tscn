@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duaf6opavdipq" path="res://game/scenes/hand/HandManager.gd" id="1_48eia"]
 
-[node name="HandManager" type="Control" unique_id=1199159261]
+[node name="HandManager" type="Control" unique_id=1199159261 groups=["hand_manager"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_48eia")

@@ -1,20 +1,18 @@
 [gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://dtpmutnej0fe7"]
 
-[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_tcgse"]
-[ext_resource type="Resource" uid="uid://cuow6fpp78k40" path="res://game/cards/generated/azmeri_executioner_73.tres" id="2_iqfas"]
-[ext_resource type="Resource" uid="uid://dexj38gtohn88" path="res://game/cards/generated/blackguard_ranger_0.tres" id="3_k71p5"]
-[ext_resource type="Resource" uid="uid://b3gm14e1oh5qt" path="res://game/cards/generated/blood_monk_89.tres" id="4_s2cij"]
-[ext_resource type="Resource" uid="uid://b7l6bbywlb2if" path="res://game/cards/generated/corrupted_abomination_67.tres" id="5_i5i0x"]
-[ext_resource type="Resource" uid="uid://dxbi6i7x6hm4u" path="res://game/cards/generated/corrupted_brute_29.tres" id="6_5ndq4"]
-[ext_resource type="Resource" uid="uid://nl5da56i7sru" path="res://game/cards/generated/corrupted_champion_53.tres" id="7_kq5t8"]
-[ext_resource type="Resource" uid="uid://g5r6naps1r8f" path="res://game/cards/generated/karui_abomination_82.tres" id="8_gyboa"]
-[ext_resource type="Resource" uid="uid://deooxm4ggtm1q" path="res://game/cards/generated/karui_stalker_41.tres" id="9_u1ap5"]
-[ext_resource type="Resource" uid="uid://buxdu10cuklr" path="res://game/cards/generated/nightfall_brute_32.tres" id="10_ab4by"]
-[ext_resource type="Resource" uid="uid://bpmybpfbnon3g" path="res://game/cards/generated/vaal_abomination_19.tres" id="11_f75p1"]
-[ext_resource type="Resource" uid="uid://cdh42275fcym2" path="res://game/cards/generated/vaal_ranger_60.tres" id="12_xwufa"]
-[ext_resource type="Resource" uid="uid://b4m5ejh7sica6" path="res://game/cards/generated/karui_revenant_13.tres" id="13_df7a0"]
-[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="14_2ig3k"]
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_jitx6"]
+[ext_resource type="Resource" uid="uid://cshruchg8tx5f" path="res://game/cards/generated/templar_monk_18.tres" id="2_f5sha"]
+[ext_resource type="Resource" uid="uid://bqs0gwu8mhdwb" path="res://game/cards/generated/nightfall_monk_34.tres" id="3_tcgse"]
+[ext_resource type="Resource" uid="uid://deyum3w4qhunv" path="res://game/cards/generated/wraeclast_archer_27.tres" id="4_iqfas"]
+[ext_resource type="Resource" uid="uid://bocjevnxxoxrq" path="res://game/cards/generated/corrupted_abomination_62.tres" id="5_k71p5"]
+[ext_resource type="Resource" uid="uid://cotdrnb3e6k7a" path="res://game/cards/generated/nightfall_brute_31.tres" id="6_s2cij"]
+[ext_resource type="Resource" uid="uid://b2il5pu3rb6m1" path="res://game/cards/generated/templar_beast_13.tres" id="7_i5i0x"]
+[ext_resource type="Resource" uid="uid://cayf06tjyqp0x" path="res://game/cards/generated/bloodbound_abomination_51.tres" id="8_5ndq4"]
+[ext_resource type="Resource" uid="uid://8ntxxqaltq1j" path="res://game/cards/generated/ezomyte_monk_4.tres" id="9_kq5t8"]
+[ext_resource type="Resource" uid="uid://cnhu2c7bujqar" path="res://game/cards/generated/azmeri_monk_92.tres" id="10_gyboa"]
+[ext_resource type="Resource" uid="uid://dt6ka5l3wbujs" path="res://game/cards/generated/eternal_abomination_94.tres" id="11_u1ap5"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="12_ab4by"]
 
 [resource]
-script = ExtResource("14_2ig3k")
-cards = Array[ExtResource("1_tcgse")]([ExtResource("2_iqfas"), ExtResource("3_k71p5"), ExtResource("4_s2cij"), ExtResource("5_i5i0x"), ExtResource("6_5ndq4"), ExtResource("7_kq5t8"), ExtResource("8_gyboa"), ExtResource("9_u1ap5"), ExtResource("10_ab4by"), ExtResource("11_f75p1"), ExtResource("12_xwufa"), ExtResource("13_df7a0")])
+script = ExtResource("12_ab4by")
+cards = Array[ExtResource("1_jitx6")]([ExtResource("2_f5sha"), ExtResource("3_tcgse"), ExtResource("4_iqfas"), ExtResource("5_k71p5"), ExtResource("6_s2cij"), ExtResource("7_i5i0x"), ExtResource("8_5ndq4"), ExtResource("9_kq5t8"), ExtResource("4_iqfas"), ExtResource("10_gyboa"), ExtResource("11_u1ap5"), ExtResource("2_f5sha")])

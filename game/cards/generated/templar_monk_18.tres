@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cshruchg8tx5f"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_iwexn"]
+
+[resource]
+script = ExtResource("1_iwexn")
+card_name = "Templar Monk"
+cost = 3
+power = 3
+keywords = Array[int]([1])
+effect_id = 3
+effect_value = 1
+effect_text = "Reveal: Apply Bleed."

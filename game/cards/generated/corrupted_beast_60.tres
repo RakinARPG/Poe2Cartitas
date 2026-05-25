@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b0dtl0uk8b6by"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_o4frf"]
+
+[resource]
+script = ExtResource("1_o4frf")
+card_name = "Corrupted Beast"
+cost = 1
+power = 1
+keywords = Array[int]([4])
+effect_text = "Corrupted by dark power."

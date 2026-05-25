@@ -14,6 +14,10 @@ var original_position := Vector2.ZERO
 
 var is_locked := false
 
+var is_revealed := false
+
+var owner_player_id := 0
+
 @onready var art_rect = %TextureRect
 @onready var name_label = %NameLabel
 @onready var cost_label = %CostLabel
@@ -79,3 +83,26 @@ func stop_drag():
 		is_dragging = false
 
 		card_released.emit(self)
+
+func hide_card():
+
+	is_revealed = false
+
+	modulate = Color(0.2, 0.2, 0.2)
+
+	text_label.visible = false
+	name_label.visible = false
+	power_label.visible = false
+	cost_label.visible = false
+
+
+func reveal_card():
+
+	is_revealed = true
+
+	modulate = Color.WHITE
+
+	text_label.visible = true
+	name_label.visible = true
+	power_label.visible = true
+	cost_label.visible = true

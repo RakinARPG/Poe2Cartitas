@@ -1,5 +1,6 @@
 extends Node
 
+
 signal effect_pushed(effect_data)
 
 signal effect_started(effect_data)
@@ -51,7 +52,7 @@ func resolve_all():
 
 	resolve_phase(EffectType.REVEAL)
 
-	resolve_phase(EffectType.ONGOING)
+	resolve_ongoing_board()
 
 	resolve_phase(EffectType.BLEED)
 
@@ -70,7 +71,7 @@ func resolve_phase(effect_type: int):
 
 	for effect_data in queue:
 
-		if effect_data.type != effect_type:
+		if effect_data["type"] != effect_type:
 			continue
 
 		effect_started.emit(effect_data)
@@ -97,70 +98,182 @@ func resolve_phase(effect_type: int):
 
 func _resolve_reveal(effect_data: Dictionary):
 
-	var card = effect_data.source_card
+	var card = effect_data["source_card"]
+
+	var location_idx = (
+		effect_data["target_location"]
+	)
 
 	print(
 		"[REVEAL] ",
-		card.card_name
+		card.data.card_name
 	)
 
-	# Ejemplo futuro:
-	# draw cards
-	# reveal buffs
-	# location triggers
+	match card.data.effect_id:
+
+		CardData.EffectId.DRAW_CARD:
+
+			resolve_draw_card(card)
+
+		CardData.EffectId.GAIN_POWER:
+
+			resolve_gain_power(
+				card,
+				location_idx
+			)
+
+		CardData.EffectId.APPLY_BLEED:
+
+			print("Apply Bleed")
+
+		CardData.EffectId.CORRUPT_SELF:
+
+			print("Corrupt Self")
+
+
+func resolve_draw_card(card):
+
+	var hand_managers = (
+		get_tree().get_nodes_in_group(
+			"hand_manager"
+		)
+	)
+
+	for hand in hand_managers:
+
+		if hand.player_id == card.owner_player_id:
+
+			var drawn_card = (
+				DeckManager.draw_card()
+			)
+
+			if drawn_card != null:
+
+				hand.add_card(drawn_card)
+
+				print(
+					"Player drew a card"
+				)
+
+			break
+
+
+func resolve_gain_power(
+	card,
+	location_idx: int
+):
+
+	LocationManager.add_power(
+		card.owner_player_id,
+		location_idx,
+		card.data.effect_value
+	)
+
+	print(
+		"Gain power: ",
+		card.data.effect_value
+	)
+
+
+func resolve_ongoing_board():
+
+	for player_id in [0, 1]:
+
+		for location_idx in range(3):
+
+			var cards = (
+				LocationManager
+				.get_cards_at_location(
+					player_id,
+					location_idx
+				)
+			)
+
+			for card in cards:
+
+				if card.data.keywords.has(
+					CardData.Keyword.ONGOING
+				):
+
+					_resolve_ongoing_card(
+						card,
+						location_idx
+					)
+
+
+func _resolve_ongoing_card(
+	card,
+	location_idx: int
+):
+
+	print(
+		"[ONGOING] ",
+		card.data.card_name
+	)
+
+	# TEST:
+	# ongoing grants +1 each turn
+
+	LocationManager.add_power(
+		card.owner_player_id,
+		location_idx,
+		1
+	)
 
 
 func _resolve_ongoing(effect_data: Dictionary):
 
-	var card = effect_data.source_card
+	var card = effect_data["source_card"]
 
 	print(
 		"[ONGOING] ",
-		card.card_name
+		card.data.card_name
 	)
-
-	# buffs permanentes
-	# aura effects
-	# lane modifiers
 
 
 func _resolve_bleed(effect_data: Dictionary):
 
-	var card = effect_data.source_card
+	var card = effect_data["source_card"]
 
 	print(
 		"[BLEED] ",
-		card.card_name
+		card.data.card_name
 	)
 
-	# daño over time
-	# execute
-	# spread bleed
+	# FUTURE:
+	#
+	# bleed stacks
+	# damage over time
+	# execute effects
 
 
 func _resolve_last_breath(effect_data: Dictionary):
 
-	var card = effect_data.source_card
+	var card = effect_data["source_card"]
 
 	print(
 		"[LAST BREATH] ",
-		card.card_name
+		card.data.card_name
 	)
 
-	# summon tokens
+	# FUTURE:
+	#
 	# death triggers
-	# revive
+	# summons
+	# revive mechanics
 
 
 func _resolve_corrupt(effect_data: Dictionary):
 
-	var card = effect_data.source_card
+	var card = effect_data["source_card"]
 
 	print(
 		"[CORRUPT] ",
-		card.card_name
+		card.data.card_name
 	)
 
-	# mutate
-	# gain power
+	# FUTURE:
+	#
+	# random modifiers
+	# mutations
 	# unstable effects

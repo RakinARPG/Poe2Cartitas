@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dbvc4m48s0s8d"]
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cnhu2c7bujqar"]
 
 [ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_4o46t"]
 
 [resource]
 script = ExtResource("1_4o46t")
 card_name = "Azmeri Monk"
-cost = 1
+cost = 2
 power = 1
-effect_text = "A warrior from Wraeclast."
+keywords = Array[int]([1])
+effect_id = 4
+effect_value = 1
+effect_text = "Reveal: Corrupt self."

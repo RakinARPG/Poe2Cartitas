@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://drr6s3b75sbm6"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6qmxg"]
+
+[resource]
+script = ExtResource("1_6qmxg")
+card_name = "Blood Necromancer"
+cost = 3
+power = 4
+keywords = Array[int]([5])
+effect_text = "Bleed enemies over time."

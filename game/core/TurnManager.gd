@@ -3,11 +3,8 @@ extends Node
 
 signal turn_started(turn_num)
 signal turn_ended(turn_num)
-
 signal game_over()
-
 signal state_changed(new_state)
-
 signal draw_phase_started(turn_num)
 
 
@@ -24,11 +21,21 @@ enum GameState {
 var current_state: GameState = GameState.SETUP
 
 
-var current_turn: int = 1
+var current_turn := 1
 
-var max_turns: int = 6
+var max_turns := 6
 
-var mana: Array[int] = [1, 2, 3, 4, 5, 6]
+
+var mana: Array[int] = [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6
+]
+
+
 var current_mana := {
 	0: 0,
 	1: 0
@@ -39,7 +46,9 @@ func start_game():
 
 	current_turn = 1
 
-	change_state(GameState.SETUP)
+	change_state(
+		GameState.SETUP
+	)
 
 	print("GAME START")
 
@@ -48,15 +57,22 @@ func start_game():
 
 func advance_turn():
 
-	turn_ended.emit(current_turn)
+	turn_ended.emit(
+		current_turn
+	)
 
-	print("TURN ENDED: ", current_turn)
+	print(
+		"TURN ENDED: ",
+		current_turn
+	)
 
 	current_turn += 1
 
 	if current_turn > max_turns:
 
-		change_state(GameState.GAME_OVER)
+		change_state(
+			GameState.GAME_OVER
+		)
 
 		print("GAME OVER")
 
@@ -67,27 +83,22 @@ func advance_turn():
 	start_draw_phase()
 
 
-func get_current_mana(player_id: int) -> int:
+func get_current_mana(
+	player_id: int
+) -> int:
 
-	# luego puedes separar mana por jugador
+	return current_mana[player_id]
 
-	var index = clamp(
-		current_turn - 1,
-		0,
-		mana.size() - 1
-	)
-
-	return mana[index]
 
 func reset_mana():
 
 	var mana_for_turn = mana[
-			clamp(
-				current_turn - 1,
-				0,
-				mana.size() - 1
-			)
-		]
+		clamp(
+			current_turn - 1,
+			0,
+			mana.size() - 1
+		)
+	]
 
 	current_mana[0] = mana_for_turn
 
@@ -116,33 +127,49 @@ func spend_mana(
 
 func start_draw_phase():
 
-	change_state(GameState.DRAW)
+	change_state(
+		GameState.DRAW
+	)
 
 	print("DRAW PHASE")
 
-	draw_phase_started.emit(current_turn)
+	draw_phase_started.emit(
+		current_turn
+	)
 
-	# FUTURO:
-	#
-	# HandManager.draw_card(0)
-	# HandManager.draw_card(1)
-	#
-	# triggers:
-	# on_draw
-	# replace draw
-	# corrupt draw
-	# bleed draw
-	# prophecy systems
+	draw_cards_for_players()
 
 	start_planning_phase()
 
 
+func draw_cards_for_players():
+	var hands = get_tree().get_nodes_in_group("hand_manager")
+
+	for hand in hands:
+		# 🛑 FILTRO DE SEGURIDAD: Validar que la mano exista y esté lista
+		if not is_instance_valid(hand) or hand.is_queued_for_deletion():
+			print("⚠️ Alerta TurnManager: Se ignoró una instancia de mano inválida o en proceso de borrado.")
+			continue
+
+		# Validamos que el nodo realmente tenga la función para añadir cartas
+		if not hand.has_method("add_card"):
+			print("⚠️ Error TurnManager: El nodo '", hand.name, "' está en el grupo 'hand_manager' pero no tiene el método add_card()")
+			continue
+
+		# Si pasa los filtros, robamos y añadimos la carta de forma segura
+		var card = DeckManager.draw_card()
+		if card != null:
+			hand.add_card(card)
+		else:
+			print("⚠️ Alerta TurnManager: El mazo se quedó sin cartas al intentar robar.")
 
 func start_planning_phase():
 
 	reset_mana()
 
-	change_state(GameState.PLANNING)
+	change_state(
+		GameState.PLANNING
+	)
 
 	print("PLANNING PHASE")
 
@@ -151,46 +178,64 @@ func start_planning_phase():
 		current_mana[0]
 	)
 
-	turn_started.emit(current_turn)
+	turn_started.emit(
+		current_turn
+	)
 
 
 func start_reveal_phase():
-
 	change_state(GameState.REVEALING)
+	print("REVEAL PHASE")
 
-	print("REVEALING PHASE")
+	var locations = get_tree().get_nodes_in_group("location_slots")
 
-	# aquí luego:
-	#
-	# reveal cards in order
-	# trigger reveal effects
-	# reveal animations
+	# 1. Revelar cartas y acumular efectos en el resolver
+	for location in locations:
+		if is_instance_valid(location) and not location.is_queued_for_deletion():
+			location.reveal_pending_cards()
 
+	# 2. Resolver todos los efectos (aquí se altera el poder en el LocationManager)
+	EffectResolver.resolve_all()
+
+	# 3. 💥 NUEVO: Le pedimos a las localizaciones que refresquen su marcador visual
+	# Ahora que los efectos ya se aplicaron en la lógica, la pantalla mostrará el número correcto.
+	for location in locations:
+		if is_instance_valid(location) and location.has_method("update_power_display"):
+			location.update_power_display()
+
+	# 4. Continuar el flujo normal
 	start_resolving_phase()
 
 
 func start_resolving_phase():
 
-	change_state(GameState.RESOLVING)
+	change_state(
+		GameState.RESOLVING
+	)
 
 	print("RESOLVING PHASE")
 
-	# aquí luego:
+	# FUTURO:
 	#
-	# EffectResolver.resolve_all()
 	# deaths
-	# ongoing
-	# bleed
-	# location effects
+	# bleed ticks
+	# ongoing cleanup
+	# location triggers
+	# destroy queue
+	# summon queue
 
 	advance_turn()
 
 
-func change_state(new_state: GameState):
+func change_state(
+	new_state: GameState
+):
 
 	current_state = new_state
 
-	state_changed.emit(current_state)
+	state_changed.emit(
+		current_state
+	)
 
 	print(
 		"STATE CHANGED: ",

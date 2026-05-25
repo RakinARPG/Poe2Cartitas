@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DeckConfig" format=3 uid="uid://icyjrboeww57"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_gamtv"]
+[ext_resource type="Resource" uid="uid://du73ee84llqxd" path="res://game/cards/generated/blood_slayer_11.tres" id="2_5fhdy"]
+[ext_resource type="Resource" uid="uid://bbr7qafskym0c" path="res://game/cards/generated/blood_witch_36.tres" id="3_60sdi"]
+[ext_resource type="Resource" uid="uid://dpdfldhrxm43f" path="res://game/cards/generated/blood_ranger_83.tres" id="4_1f6n6"]
+[ext_resource type="Resource" uid="uid://6ny2tmatm0ec" path="res://game/cards/generated/blood_executioner_26.tres" id="5_4i1si"]
+[ext_resource type="Resource" uid="uid://dflxfpgtqu1ut" path="res://game/cards/generated/blood_invoker_29.tres" id="6_2kuja"]
+[ext_resource type="Resource" uid="uid://glu0pwqxcu2t" path="res://game/cards/generated/blood_necromancer_97.tres" id="7_4my7d"]
+[ext_resource type="Resource" uid="uid://bvlhe4awh5q08" path="res://game/cards/generated/blood_necromancer_93.tres" id="8_bqwib"]
+[ext_resource type="Resource" uid="uid://q43dhu3ntiri" path="res://game/cards/generated/blood_champion_14.tres" id="9_gydm6"]
+[ext_resource type="Resource" uid="uid://cxidthtstgku4" path="res://game/cards/generated/bloodbound_stalker_79.tres" id="10_hrjq1"]
+[ext_resource type="Resource" uid="uid://wlxwompe5ti8" path="res://game/cards/generated/bloodbound_monk_16.tres" id="11_favjl"]
+[ext_resource type="Resource" uid="uid://ha8sdgab2jqa" path="res://game/cards/generated/corrupted_executioner_35.tres" id="12_11hcg"]
+[ext_resource type="Resource" uid="uid://cpl5gftix36w8" path="res://game/cards/generated/ashen_revenant_24.tres" id="13_y5caf"]
+[ext_resource type="Script" uid="uid://bsb5ri4s18mfj" path="res://game/cards/DeckConfig.gd" id="14_a3f87"]
+
+[resource]
+script = ExtResource("14_a3f87")
+cards = Array[ExtResource("1_gamtv")]([ExtResource("2_5fhdy"), ExtResource("3_60sdi"), ExtResource("4_1f6n6"), ExtResource("5_4i1si"), ExtResource("6_2kuja"), ExtResource("7_4my7d"), ExtResource("8_bqwib"), ExtResource("9_gydm6"), ExtResource("10_hrjq1"), ExtResource("11_favjl"), ExtResource("12_11hcg"), ExtResource("13_y5caf")])

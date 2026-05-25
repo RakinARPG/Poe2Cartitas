@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dflxfpgtqu1ut"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_5ic1v"]
+
+[resource]
+script = ExtResource("1_5ic1v")
+card_name = "Blood Invoker"
+cost = 4
+power = 6
+keywords = Array[int]([5])
+effect_text = "Bleed enemies over time."

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c45qfp2dvs31y"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_u1odo"]
+
+[resource]
+script = ExtResource("1_u1odo")
+card_name = "Corrupted Marauder"
+cost = 6
+power = 11
+keywords = Array[int]([4])
+effect_text = "Corrupted by dark power."

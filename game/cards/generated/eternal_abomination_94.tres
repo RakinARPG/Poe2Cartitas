@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dt6ka5l3wbujs"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_d734u"]
+
+[resource]
+script = ExtResource("1_d734u")
+card_name = "Eternal Abomination"
+cost = 4
+power = 7
+keywords = Array[int]([1])
+effect_id = 2
+effect_value = 2
+effect_text = "Reveal: Gain +2 Power."

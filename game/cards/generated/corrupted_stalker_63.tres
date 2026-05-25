@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://8b32h18wxm4q"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_x31nt"]
+
+[resource]
+script = ExtResource("1_x31nt")
+card_name = "Corrupted Stalker"
+cost = 2
+power = 1
+keywords = Array[int]([1])
+effect_id = 1
+effect_value = 1
+effect_text = "Reveal: Draw 1 card."

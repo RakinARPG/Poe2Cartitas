@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b18cva6dvvbsb"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_s46d5"]
+
+[resource]
+script = ExtResource("1_s46d5")
+card_name = "Corrupted Titan"
+cost = 4
+power = 8
+keywords = Array[int]([4])
+effect_text = "Corrupted by dark power."

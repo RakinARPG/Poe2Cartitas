@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ci54b4wckwbqc"]
+
+[ext_resource type="Script" uid="uid://b4vl5edq5317m" path="res://game/cards/DataCard.gd" id="1_6j8rm"]
+
+[resource]
+script = ExtResource("1_6j8rm")
+card_name = "Undying Executioner"
+cost = 3
+power = 5
+effect_text = "A warrior from Wraeclast."

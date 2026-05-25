@@ -24,6 +24,8 @@ func add_card(card_data: CardData):
 	hand_container.add_child(card_node)
 
 	card_node.setup(card_data)
+	
+	card_node.owner_player_id = player_id
 
 	cards_in_hand.append(card_node)
 

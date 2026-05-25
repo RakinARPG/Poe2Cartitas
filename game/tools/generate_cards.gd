@@ -1,11 +1,13 @@
 @tool
 extends EditorScript
 
+
 const CardData = preload(
 	"res://game/cards/DataCard.gd"
 )
 
-const OUTPUT_PATH :="res://game/cards/generated/"
+
+const OUTPUT_PATH := "res://game/cards/generated/"
 
 
 const PREFIXES = [
@@ -69,7 +71,13 @@ func _run():
 			.replace(" ", "_")
 		)
 
-		var save_path = OUTPUT_PATH + file_name + "_" + str(i) + ".tres"
+		var save_path = (
+			OUTPUT_PATH
+			+ file_name
+			+ "_"
+			+ str(i)
+			+ ".tres"
+		)
 
 		ResourceSaver.save(
 			card,
@@ -91,10 +99,14 @@ func generate_card() -> CardData:
 		card.cost
 	)
 
+	# EFFECTS
+	generate_effects(card)
+
 	# POWER
 	card.power = generate_balanced_power(
 		card.cost,
-		card.keywords
+		card.keywords,
+		card.effect_id
 	)
 
 	# NAME
@@ -102,9 +114,9 @@ func generate_card() -> CardData:
 		card.keywords
 	)
 
-	# EFFECT
+	# TEXT
 	card.effect_text = generate_effect_text(
-		card.keywords
+		card
 	)
 
 	return card
@@ -148,7 +160,10 @@ func generate_keywords(
 	# Más coste = más habilidades
 	if roll <= (25 + cost * 8):
 
-		var keyword = randi_range(1, 5)
+		var keyword = randi_range(
+			1,
+			CardData.Keyword.size() - 1
+		)
 
 		result.append(keyword)
 
@@ -171,7 +186,10 @@ func generate_keywords(
 		100
 	) <= double_keyword_chance:
 
-		var second = randi_range(1, 5)
+		var second = randi_range(
+			1,
+			CardData.Keyword.size() - 1
+		)
 
 		if not result.has(second):
 
@@ -180,13 +198,65 @@ func generate_keywords(
 	return result
 
 
+func generate_effects(card: CardData):
+
+	card.effect_id = (
+		CardData.EffectId.NONE
+	)
+
+	card.effect_value = 0
+
+	# Reveal effects
+	if card.keywords.has(
+		CardData.Keyword.REVEAL
+	):
+
+		var roll = randi_range(1, 4)
+
+		match roll:
+
+			1:
+
+				card.effect_id = (
+					CardData.EffectId.DRAW_CARD
+				)
+
+				card.effect_value = 1
+
+			2:
+
+				card.effect_id = (
+					CardData.EffectId.GAIN_POWER
+				)
+
+				card.effect_value = 2
+
+			3:
+
+				card.effect_id = (
+					CardData.EffectId.APPLY_BLEED
+				)
+
+				card.effect_value = 1
+
+			4:
+
+				card.effect_id = (
+					CardData.EffectId.CORRUPT_SELF
+				)
+
+				card.effect_value = 1
+
+
 func generate_balanced_power(
 	cost: int,
-	keywords: Array[int]
+	keywords: Array[int],
+	effect_id: int
 ) -> int:
 
 	var power := cost * 2
 
+	# Penalización por keywords
 	for keyword in keywords:
 
 		match keyword:
@@ -206,6 +276,22 @@ func generate_balanced_power(
 			CardData.Keyword.BLEED:
 				power -= 2
 
+	# Penalización por efectos
+	match effect_id:
+
+		CardData.EffectId.DRAW_CARD:
+			power -= 2
+
+		CardData.EffectId.GAIN_POWER:
+			power -= 1
+
+		CardData.EffectId.APPLY_BLEED:
+			power -= 1
+
+		CardData.EffectId.CORRUPT_SELF:
+			power -= 1
+
+	# Variación pequeña
 	power += randi_range(-1, 1)
 
 	power = max(power, 1)
@@ -240,49 +326,71 @@ func generate_name(
 
 
 func generate_effect_text(
-	keywords: Array[int]
+	card: CardData
 ) -> String:
-
-	if keywords.is_empty():
-
-		return (
-			"A warrior from Wraeclast."
-		)
 
 	var lines: Array[String] = []
 
-	for keyword in keywords:
+	for keyword in card.keywords:
 
 		match keyword:
 
 			CardData.Keyword.REVEAL:
 
-				lines.append(
-					"Reveal: Draw 1 card."
-				)
+				match card.effect_id:
+
+					CardData.EffectId.DRAW_CARD:
+
+						lines.append(
+							"Reveal: Draw 1 card."
+						)
+
+					CardData.EffectId.GAIN_POWER:
+
+						lines.append(
+							"Reveal: Gain +"
+							+ str(card.effect_value)
+							+ " Power."
+						)
+
+					CardData.EffectId.APPLY_BLEED:
+
+						lines.append(
+							"Reveal: Apply Bleed."
+						)
+
+					CardData.EffectId.CORRUPT_SELF:
+
+						lines.append(
+							"Reveal: Corrupt self."
+						)
 
 			CardData.Keyword.ONGOING:
 
 				lines.append(
-					"Ongoing: Adjacent allies gain +1 Power."
+					"Ongoing: Gain +1 Power each turn."
 				)
 
 			CardData.Keyword.LAST_BREATH:
 
 				lines.append(
-					"Last Breath: Summon a 1/1 Spirit."
+					"Last Breath: Summon a Spirit."
 				)
 
 			CardData.Keyword.CORRUPT:
 
 				lines.append(
-					"Corrupt: Gains +2 Power after damage."
+					"Corrupted by dark power."
 				)
 
 			CardData.Keyword.BLEED:
 
 				lines.append(
-					"Bleed: Damage enemies over time."
+					"Bleed enemies over time."
 				)
+
+	if lines.is_empty():
+
+		return "A warrior from Wraeclast."
 
 	return " ".join(lines)
